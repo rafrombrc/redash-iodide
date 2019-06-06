@@ -1,0 +1,52 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+dist-name = "redash-iodide"
+module = "redash_iodide"
+author = "Mozilla Corporation"
+author-email = "dev-webdev@lists.mozilla.org"
+home-page = "https://github.com/rafrombrc/redash-iodide"
+requires = [
+    "dockerflow>=2018.4.0",
+    "requests",
+    "sqlparse",
+    "six",
+    "pyhive",
+    "pgsanity",
+]
+description-file = "README.rst"
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment :: Mozilla",
+    "Framework :: Flask",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Internet :: WWW/HTTP",
+]
+license = "MPL 2.0"
+
+
+[tool.flit.metadata.requires-extra]
+test = [
+    "pytest",
+    "mock",
+    "pytest-cov",
+    "pytest-flake8",
+]
+dev = [
+    "watchdog",
+]
+
+[tool.flit.entrypoints."redash.extensions"]
+dockerflow = "redash_iodide.dockerflow:extension"
+handler_remote_user_auth = "redash_iodide.handlers.authentication.remote_user_auth:extension"
+

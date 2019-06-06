@@ -1,0 +1,2 @@
+- Jannis Leidel (@jezdez)
+- Rob Miller (rmiller@mozilla.com)
