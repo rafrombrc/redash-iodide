@@ -4,7 +4,7 @@ from redash.authentication import get_next_path
 from redash.authentication.org_resolving import current_org
 from redash.authentication.remote_user_auth import logger
 
-from redash_stmo import settings as extension_settings
+from redash_iodide import settings as extension_settings
 
 
 def check_remote_groups():
